@@ -1,0 +1,17 @@
+{
+  "gitbook": "3.x.x",
+  "plugins": [],
+  "pluginsConfig": {
+  },
+  "author": "NowSecure Research Team",
+  "title": "r2frida | NowSecure",
+  "links": {
+    "sidebar": {
+      "NowSecure": "https://www.nowsecure.com/"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css",
+    "pdf": "styles/pdf.css"
+  }
+}

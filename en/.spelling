@@ -1,0 +1,45 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+droidguard
+TLS
+bytecode
+Dalvik
+GMS
+SELinux
+SafetyNet
+Proguard
+APK
+Checkin
+MITM
+Widevine
+DRM
+TrustZone
+APKs
+SHA1
+dexfile
+entrypoint
+filename
+codepaths
+syscalls
+execv
+JNI
+VM
+sigaction
+motochopper
+vtable
+Base64
+e.g.
+Protobuf
+xposed
+protobuf
+protobuffer
+snet
+_gcore
+24
+Base64
+protobuf
+32-bit
+arm64-v8a
