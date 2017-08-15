@@ -1,0 +1,35 @@
+sudo: false
+language: node_js
+addons:
+  apt:
+    packages:
+      - calibre
+install:
+  - npm install -g gitbook
+  - npm install -g gitbook-cli
+script:
+  - export PATH=${PWD}/dev/bin:${PATH} # for ebook-convert
+  - gitbook install
+  - gitbook build
+  - export BUILD_NAME=r2frida-v$TRAVIS_BUILD_NUMBER
+  - export PDF_FILENAME=$BUILD_NAME.pdf
+  - export ZIP_FILENAME=$BUILD_NAME.zip
+  - echo "Build name - $BUILD_NAME, pdf file - $PDF_FILENAME, zip file - $ZIP_FILENAME"
+  - gitbook pdf ./ ./$PDF_FILENAME
+  - echo "Making a zip of the html content"
+  - pushd _book
+  - zip -r -9 ../$ZIP_FILENAME ./*
+after_success:
+  - ls -la _book
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: rrBPaKS7MDGyO16OFNL/iEuxZ2CkIzViXcQk+8YCoPMvDOmhF2h5Ek1oflbemUewAkr6Eg3hfLO/SL5gKJOn++K7xYu3vunhFj2lgbfbN9jp6O1YDqUBeEsTW8YaLawOk02aColfVR/c9EPPXe8W7JBf9dWhXNt3I9dGkMOhgXLL0QcDZEcCUwROezW6wrAel00lOaVBy0KYJsNoAhKzTBNQt665cyY/QAhV/32Ij27/dAD2+ETanrRPCb6ByuA81opvdT7AZeZIeVitxe/UdS6EvCcZ7QuEeQURyYe1LrBF3vP/nyWHsy3zYGCNnsv9MQDl/rNc+1Mhcgoh8lzJ2jEW6elhKzvoRyyxtsyuKrLypkDHIiBMyOoRmoF0N8pB+tcjqOl0wyFOGQGpzIDPqBld0i1EyCoRvjMr6xEFn4ikQ22QhljlJnDU/w+KSp/YUZ8+NQVtwR9otS7qnS3ITkfxKoxdC/IOViysGRovHl2V4Z1id/JEVXISSRlD+g4tXgMiEfhxyEJJ8i/ZtRTXcw8f2d/tOsCZAtl+MmkCrt84FCCkinXctrUnjDEU4g9XKfv5jfCrgKrLaf0F61+eKFMebYZujbGqx3ItcgYD96L80GXu6HXxFFqQjtRnTmNXqdfA0DW6IYGWusMJ/51p2BZB7n9HwD9FxWDj3zXLoEw=
+  file_glob: true
+  file:
+    - "*.pdf"
+    - "*.zip"
+  on:
+    repo: viaforensics/r2frida-book
+    tags: true

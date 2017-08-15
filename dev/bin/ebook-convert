@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#This is a bit of a hack to make gitbook pdf work on a headless server,
+#i.e. inside travics-ci, see:
+#https://www.systutorials.com/qa/1266/how-gitbook-headless-server-make-calibre-run-headless-server
+
+echo "Run xvfb-run /usr/bin/ebook-convert $@"
+
+xvfb-run /usr/bin/ebook-convert "$@"
