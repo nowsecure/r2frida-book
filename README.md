@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/viaforensics/r2frida-book.svg?token=xDiMk826j5Jidm4LKVST&branch=master)](https://travis-ci.com/viaforensics/r2frida-book)
+
 # r2frida book
 
 # Development
