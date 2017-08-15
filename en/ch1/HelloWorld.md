@@ -1,6 +1,6 @@
 # Our first session (iOS)
 
-Here we're assuming a jailbroken device, with r2frida dependenciesk that you would have with Workstation.
+Here we're assuming a jailbroken device, with r2frida dependencies that you would have with Workstation.
 
 We're going to launch an r2 session using the special `frida://` URI which is
 handled by the `r2frida` `r2pm` package that comes installed.
