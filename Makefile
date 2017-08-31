@@ -1,9 +1,12 @@
 all : pdf
 
-.PHONY : all
+.PHONY : all pdf html serve-open
 
-pdf :
+pdf:
 	gitbook pdf
+
+html:
+	gitbook build . html
 
 serve-open:
 	gitbook serve --open
