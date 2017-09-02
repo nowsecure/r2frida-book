@@ -1,21 +1,21 @@
-# Our first session (iOS)
+# Our first session \(iOS\)
 
 Here we're assuming a jailbroken device, with r2frida dependencies that you would have with Workstation.
 
-We're going to launch an r2 session using the special `frida://` URI which is
+We're going to launch an r2 session using the special `frida://` URI which is  
 handled by the `r2frida` `r2pm` package that comes installed.
 
 ```sh
 ± r2 frida://$(idevice_id -l)/Safari
  -- Disassemble?! No Disassemble Johnny No. 5!!!
- ```
+```
 
 We use the `idevice_id -l` command which is part of [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice/)
 
 ## Help
 
-Getting help for r2frida can be done using the `\?` command. The `?` command
-alone will get help for r2, which is the primary environment you start in.
+Getting help for r2frida can be done using the `\?` command. The `?` command  
+alone will get help for r2, which is the primary environment you start in.  
 All r2frida commands will use this `\` prefix.
 
 ```md
@@ -29,8 +29,7 @@ r2frida commands available via =!
 i                          Show target information
 ii[*]                      List imports
 il                         List libraries
-ie[*] <lib>                List exports/entrypoints of lib
-is[*] (<lib>) <sym>        Show address of symbol
+is[a][j*] (<lib>) <sym>    Show address of symbol
 ic <class>                 List Objective-C classes or methods of <class>
 ip <protocol>              List Objective-C protocols or methods of <protocol>
 fd[*j] <address>           Inverse symbol resolution
@@ -62,3 +61,6 @@ dxc [sym|addr] [args..]    Call the target symbol with given args
 eval code..                Evaluate Javascript code in agent side
 resume                     Resume spawned process
 ```
+
+Note that all r2frida command start with \. This is because those commands are implemented inside the IO plugin, if it implements the system callback. As long as it's WIP, 
+
