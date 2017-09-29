@@ -26,6 +26,7 @@
   * [App Storage](./ch5/App_Storage.md)
   * [Browse files from sandbox](./ch5/Sandbox.md)
 * [Cheat Sheet](./ch5/README.md)
+* [Bonus Track](./Bonus.md)
 * [Conclusion and Future](Conclusion_and_Future.md)
 
 ---
