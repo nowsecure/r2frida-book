@@ -1,5 +1,7 @@
 # r2frida book
 
+Welcome. This project is project is in the process of being brought back online. In the meantime you might want to check out https://github.com/enovella/r2frida-wiki.
+
 # Development
 
 ## install
